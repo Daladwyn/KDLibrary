@@ -1,27 +1,38 @@
 ﻿@page
 @model KDLibrary.Pages.HuntEventsModel
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
 @{
     ViewData["Title"] = "Hunt Events";
 }
+@if (SignInManager.IsSignedIn(User))
+{
 
-<div class="text-center">
-    <h1 class="display-4">Kapitel:Hunt Events</h1>
-    <p>
-        <img src="~/Images/sida090 - Hunt Event Table.png" />
-        <img src="~/Images/sida091 - Hunt Events.png" />
-        <img src="~/Images/sida092 - Hunt Events.png" />
-        <img src="~/Images/sida093 - Hunt Events.png" />
-        <img src="~/Images/sida094 - Hunt Events.png" />
-        <img src="~/Images/sida095 - Hunt Events.png" />
-        <img src="~/Images/sida096 - Hunt Events.png" />
-        <img src="~/Images/sida097 - Hunt Events.png" />
-        <img src="~/Images/sida098 - Hunt Events.png" />
-        <img src="~/Images/sida099 - Hunt Events.png" />
-        <img src="~/Images/sida100 - Hunt Events.png" />
-        <img src="~/Images/sida101 - Hunt Events.png" />
-        <img src="~/Images/sida102 - Hunt Events.png" />
-        <img src="~/Images/sida103 - Hunt Events.png" />
-        <img src="~/Images/sida104 - Hunt Events.png" />
-        <img src="~/Images/sida105 - Hunt Events.png" />
-    </p>
-</div>
+    <div class="text-center">
+        <h1 class="display-4">Kapitel:Hunt Events</h1>
+        <p>
+            <img src="~/Images/sida090 - Hunt Event Table.png" />
+            <img src="~/Images/sida091 - Hunt Events.png" />
+            <img src="~/Images/sida092 - Hunt Events.png" />
+            <img src="~/Images/sida093 - Hunt Events.png" />
+            <img src="~/Images/sida094 - Hunt Events.png" />
+            <img src="~/Images/sida095 - Hunt Events.png" />
+            <img src="~/Images/sida096 - Hunt Events.png" />
+            <img src="~/Images/sida097 - Hunt Events.png" />
+            <img src="~/Images/sida098 - Hunt Events.png" />
+            <img src="~/Images/sida099 - Hunt Events.png" />
+            <img src="~/Images/sida100 - Hunt Events.png" />
+            <img src="~/Images/sida101 - Hunt Events.png" />
+            <img src="~/Images/sida102 - Hunt Events.png" />
+            <img src="~/Images/sida103 - Hunt Events.png" />
+            <img src="~/Images/sida104 - Hunt Events.png" />
+            <img src="~/Images/sida105 - Hunt Events.png" />
+        </p>
+    </div>
+}
+else
+{
+    <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>
+}

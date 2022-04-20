@@ -1,14 +1,25 @@
 ﻿@page
 @model KDLibrary.Pages.SevereInjuriesModel
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
 @{
     ViewData["Title"] = "Severe Injuries";
 }
+@if (SignInManager.IsSignedIn(User))
+{
+    <div class="text-center">
+        <h1 class="display-4">Kapitel:Severe Injuries</h1>
+        <p>
+            <img src="~/Images/sida086 - Severe Injuries.png" />
+            <img src="~/Images/sida087 - Severe Injuries.png" />
+        </p>
+    </div>
+}
+else
+{
+    <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>
+}
 
-<div class="text-center">
-    <h1 class="display-4">Kapitel:Severe Injuries</h1>
-    <p>
-        <img src="~/Images/sida086 - Severe Injuries.png" />
-        <img src="~/Images/sida087 - Severe Injuries.png" />
-    </p>
-</div>
 

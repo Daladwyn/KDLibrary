@@ -1,26 +1,35 @@
 ﻿@page
 @model KDLibrary.Pages.ShowDownPhaseModel
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
 @{
     ViewData["Title"] = "ShowdownPhase";
 }
-
-<div class="text-center">
-    <h1 class="display-4">Kapitel:Showdown Phase</h1>
-    <p>
-        <img src="~/Images/sida065 - Showdown Phase.png" />
-        <img src="~/Images/sida066 - Showdown Phase.png" />
-        <img src="~/Images/sida067 - Showdown Phase.png" />
-        <img src="~/Images/sida068 - Showdown Phase.png" />
-        <img src="~/Images/sida069 - Showdown Phase.png" />
-        <img src="~/Images/sida070 - Showdown Phase.png" />
-        <img src="~/Images/sida071 - Showdown Phase.png" />
-        <img src="~/Images/sida072 - Showdown Phase.png" />
-        <img src="~/Images/sida073 - Showdown Phase.png" />
-        <img src="~/Images/sida074 - Showdown Phase.png" />
-        <img src="~/Images/sida075 - Showdown Phase.png" />
-        <img src="~/Images/sida076 - Showdown Phase.png" />
-        <img src="~/Images/sida077 - Showdown Phase.png" />
-        <img src="~/Images/sida078 - Showdown Phase.png" />
-        <img src="~/Images/sida079 - Showdown Phase.png" />
-    </p>
-</div>
+@if (SignInManager.IsSignedIn(User))
+{
+    <div class="text-center">
+        <h1 class="display-4">Kapitel:Showdown Phase</h1>
+        <p>
+            <img src="~/Images/sida065 - Showdown Phase.png" />
+            <img src="~/Images/sida066 - Showdown Phase.png" />
+            <img src="~/Images/sida067 - Showdown Phase.png" />
+            <img src="~/Images/sida068 - Showdown Phase.png" />
+            <img src="~/Images/sida069 - Showdown Phase.png" />
+            <img src="~/Images/sida070 - Showdown Phase.png" />
+            <img src="~/Images/sida071 - Showdown Phase.png" />
+            <img src="~/Images/sida072 - Showdown Phase.png" />
+            <img src="~/Images/sida073 - Showdown Phase.png" />
+            <img src="~/Images/sida074 - Showdown Phase.png" />
+            <img src="~/Images/sida075 - Showdown Phase.png" />
+            <img src="~/Images/sida076 - Showdown Phase.png" />
+            <img src="~/Images/sida077 - Showdown Phase.png" />
+            <img src="~/Images/sida078 - Showdown Phase.png" />
+            <img src="~/Images/sida079 - Showdown Phase.png" />
+        </p>
+    </div>
+}
+else
+{
+    <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>
+}

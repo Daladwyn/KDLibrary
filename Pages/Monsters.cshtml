@@ -1,19 +1,30 @@
 ﻿@page
 @model KDLibrary.Pages.MonstersModel
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
 @{
     ViewData["Title"] = "Monsters";
 }
+@if (SignInManager.IsSignedIn(User))
+{
 
-<div class="text-center">
-    <h1 class="display-4">Kapitel:Monsters</h1>
-    <p></p>
-    <p>
-        <img src="~/Images/sida049 - Monsters.png" />
-        <img src="~/Images/sida050 - Monsters.png" />
-        <img src="~/Images/sida051 - Monsters.png" />
-        <img src="~/Images/sida052 - Monsters.png" />
-        <img src="~/Images/sida053 - Monsters.png" />
-        <img src="~/Images/sida054 - Monsters.png" />
-        <img src="~/Images/sida055 - Monsters.png" />
-    </p>
-</div>
+    <div class="text-center">
+        <h1 class="display-4">Kapitel:Monsters</h1>
+        <p></p>
+        <p>
+            <img src="~/Images/sida049 - Monsters.png" />
+            <img src="~/Images/sida050 - Monsters.png" />
+            <img src="~/Images/sida051 - Monsters.png" />
+            <img src="~/Images/sida052 - Monsters.png" />
+            <img src="~/Images/sida053 - Monsters.png" />
+            <img src="~/Images/sida054 - Monsters.png" />
+            <img src="~/Images/sida055 - Monsters.png" />
+        </p>
+    </div>
+}
+else
+{
+    <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>
+}

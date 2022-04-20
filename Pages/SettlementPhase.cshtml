@@ -1,18 +1,27 @@
 ﻿@page
 @model KDLibrary.Pages.SettlementPhaseModel
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
 @{
     ViewData["Title"] = "Settlement Phase";
 }
+@if (SignInManager.IsSignedIn(User))
+{
+    <div class="text-center">
+        <h1 class="display-4">Kapitel:Settlement Phase</h1>
+        <p>
+            <img src="~/Images/sida081 - Settlement Phase.png" />
+            <img src="~/Images/sida082 - Settlement Phase.png" />
+            <img src="~/Images/sida083 - Settlement Phase.png" />
+            <img src="~/Images/sida084 - Settlement Phase.png" />
+            <img src="~/Images/sida085 - Settlement Phase.png" />
 
-<div class="text-center">
-    <h1 class="display-4">Kapitel:Settlement Phase</h1>
-    <p>
-        <img src="~/Images/sida081 - Settlement Phase.png" />
-        <img src="~/Images/sida082 - Settlement Phase.png" />
-        <img src="~/Images/sida083 - Settlement Phase.png" />
-        <img src="~/Images/sida084 - Settlement Phase.png" />
-        <img src="~/Images/sida085 - Settlement Phase.png" />
-        
-    </p>
-</div>
+        </p>
+    </div>
+}
+else
+{
+    <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>
+}
 

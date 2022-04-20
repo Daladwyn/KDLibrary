@@ -1,13 +1,24 @@
 ﻿@page
 @model KDLibrary.Pages.ResourcesModel
+@using Microsoft.AspNetCore.Identity
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
 @{
     ViewData["Title"] = "Resources";
 }
+@if (SignInManager.IsSignedIn(User))
+{
 
-<div class="text-center">
-    <h1 class="display-4">Kapitel:Resources</h1>
-    <p>
-        <img src="~/Images/sida056 - Resources.png" />
-        <img src="~/Images/sida057 - Resources.png" />
-    </p>
-</div>
+    <div class="text-center">
+        <h1 class="display-4">Kapitel:Resources</h1>
+        <p>
+            <img src="~/Images/sida056 - Resources.png" />
+            <img src="~/Images/sida057 - Resources.png" />
+        </p>
+    </div>
+}
+else
+{
+    <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>
+}
